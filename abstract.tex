@@ -1,6 +1,7 @@
 \documentclass[a4paper, 12pt]{article}
 
 \begin{document}
+
 \section{Securecodeing}
 \subsection{Stide}
 \subsection{Security Adjustation}
@@ -36,6 +37,14 @@
 		\item Invalidated redirects and forwards
 	\end{enumerate}
 \subsection{SQL Injection}
+One of the most exploited vuln., despite being well known for almost a decade
+\begin{itemize}
+\item Problem: App doesn't properly separate database statements form user data
+\item Impact: Read/Write access to database (sometimes even databases form other apps which are on the same server)
+\item Tool support: sqlmap (can find injection, dump content, supports different DBMS)
+\item Solution: Never trust user-supplied data - Separate query logic form user data
+\item Good Practice: Prepared statements
+\end{itemize}
 \subsection{REST}
 
 \section{WebSec 2}
@@ -65,6 +74,63 @@ zb Social Eng ...
 \section{Internet of Things}
 \subsection{Applikationbeispiele}
 \subsection{Sec Challanges}
+//TODO combine the following points better
+\begin{itemize}
+\item larger attack surface
+\begin{itemize}
+\item large number of interfaces
+\item new possibilities of exploiting existing vuln. and threats
+\item new interaction possibilities
+\item new possible attack patterns or procedures, threats and damages
+\item IoT devices use local and remote services and provide services with or without any human intervertion
+\end{itemize}
+\item Fault Tolerance
+\begin{itemize}
+\item Connectivity is not constant
+\item context of devices changes over timem sometimes abruptly
+\item system must cope with these changes, providing a partial service until the conditions are more facorable
+\end{itemize}
+\item Efficient Cryptographic Primitces
+\begin{itemize}
+\item provide good secirity primitives suitable for low resource consumption(energy, time, sace)
+\item deployment of efficient key distribution and management systems
+\end{itemize}
+\item Integrate IoT with the rest of the Internet
+\begin{itemize}
+\item use protocols and security mechanisms used in the internet or bridge to them, archieving end-to-end security when translating the different underlying protocols, existence of such sub-networks and interactions between them must be taken into account
+\end{itemize}
+\item Intrusion Detection Systems and Survivability Mechanisms
+\begin{itemize}
+\item react to changes in environment
+\end{itemize}
+\item Trust Management and Secure Collaboration
+\begin{itemize}
+\item Need trust relationships between users and devices
+\item Devices might know each other, or might be complete stranges
+\item Need to interoperate the security policies of different components(how will devices react if a particular event arises?, Who are the elements i should collaborate with, and how?)
+\end{itemize}
+\item Models and mechanisms for device and data ownership
+\begin{itemize}
+\item Users may utilize their devices to authenticate themselves
+\item Devices might perform certain operations on behalf of their users
+\item MEchanisms and security policies and mechanisms that control how the data is created, accessed and protected
+\end{itemize}
+\item Software maintenance process
+\begin{itemize}
+\item How to release security patches
+\end{itemize}
+\item Usability
+\begin{itemize}
+\item security for IoT-based applications must be understandable and manageable by end-users
+\end{itemize}
+\item Privacy
+\begin{itemize}
+\item "Things" belong to people and collect information about actions of them
+\item Devices and interfaces should do not leak personal information aboit the users location activities preferences // haha nice try NSA :D
+\item Need to avoid that a communication partner is able to collect large amounts of information. Current Algorithms do not prevent this type of attack
+\end{itemize}
+\end{itemize}
+
 \subsection{Sec Solutions}
 \subsection{RFID}
 \subsection{Blockerback}
@@ -92,11 +158,25 @@ die ueber legitime Ports ausgenutzt werden koennen.
 \section{WebVulnerabilities}
 \subsection{State of the art}
 \subsection{Top 10}
+Already in section WebSec
 \subsection{SQL Injection Counter MEasures}
 SYNTAX
-\subsection{XSS}
+Some Stuff in section websec 
+//TODO add syntax
+//TODO add example Counter Measures
+\subsection{XSS - Cross-site scripting}
+\begin{itemize}
+\item User injects JavaScript code that subsequentially gets executed in the browser of the visitor
+\item Problem: User data that contains HTML markup is not properly escaped, the browser renders the attacker code as port of the web page
+\end{itemize}
+
 \subsection{CSRF}
 \subsection{Session Hacking}
+//Broken Authentication and session mgmt.
+\begin{itemize}
+\item Badly implemented access control: index.html redirects to secret.html if the password is correct
+\item Sometimes one can go directly to secret.html without password check
+\end{itemize}
 
 \section{Formal Security Models}
 \subsection{Welche art von Modellen gibt es}
@@ -104,6 +184,37 @@ SYNTAX
 \subsection{Conclusions}
 
 \section{BufferOverflow}
+\subsection{Buffer Overflows}
+Things good to know:
+\begin{itemize}
+\item First publication 1972
+\item First documented exploit, Morris Worm 1988
+\item Three famous Worms(2001 Code Red Worm, 2003 SQL Slammer, 2008 Conficker Worm)
+\item Triggered by external data input with Dangerous code
+\item Mostly seen in C/C++ because of missing memory boundarys or access checking
+\end{itemize}
+\subsubsection{Stack Buffer Overflows}
+Programm Stack: used for managing prog execution and prog state, saves 
+\begin{itemize}
+\item Return Address
+\item Function Arguments
+\item Local Varibales
+\end{itemize}
+on the Stack Frame.
+Register EBP saves actual address of the Frame (Intel)
+Frame Pointer is the Reference Pointer within the Stack
+Stack gets modified during following actions
+\begin{itemize}
+\item Function call
+\item Function Initialization
+\item When function returns
+\end{itemize}
+//TODO merge FunctionCall example
+\subsubsection{Heap Buffer Overflows}
+Ich denke hierzu haben wir nicht wirklich was gemacht weis nicht ob das jedoch bekannt ist 
+\subsection{Integer Overflows}
+\subsection{Format String Attacks}
+\subsection{Race Conditions}
 
 \section{NOT RELEVANT}
 \begin{tabular}{|c|c|} \hline
