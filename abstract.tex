@@ -60,6 +60,63 @@ zb Social Eng ...
 \section{Internet of Things}
 \subsection{Applikationbeispiele}
 \subsection{Sec Challanges}
+//TODO combine the following points better
+\begin{itemize}
+\item larger attack surface
+\begin{itemize}
+\item large number of interfaces
+\item new possibilities of exploiting existing vuln. and threats
+\item new interaction possibilities
+\item new possible attack patterns or procedures, threats and damages
+\item IoT devices use local and remote services and provide services with or without any human intervertion
+\end{itemize}
+\item Fault Tolerance
+\begin{itemize}
+\item Connectivity is not constant
+\item context of devices changes over timem sometimes abruptly
+\item system must cope with these changes, providing a partial service until the conditions are more facorable
+\end{itemize}
+\item Efficient Cryptographic Primitces
+\begin{itemize}
+\item provide good secirity primitives suitable for low resource consumption(energy, time, sace)
+\item deployment of efficient key distribution and management systems
+\end{itemize}
+\item Integrate IoT with the rest of the Internet
+\begin{itemize}
+\item use protocols and security mechanisms used in the internet or bridge to them, archieving end-to-end security when translating the different underlying protocols, existence of such sub-networks and interactions between them must be taken into account
+\end{itemize}
+\item Intrusion Detection Systems and Survivability Mechanisms
+\begin{itemize}
+\item react to changes in environment
+\end{itemize}
+\item Trust Management and Secure Collaboration
+\begin{itemize}
+\item Need trust relationships between users and devices
+\item Devices might know each other, or might be complete stranges
+\item Need to interoperate the security policies of different components(how will devices react if a particular event arises?, Who are the elements i should collaborate with, and how?)
+\end{itemize}
+\item Models and mechanisms for device and data ownership
+\begin{itemize}
+\item Users may utilize their devices to authenticate themselves
+\item Devices might perform certain operations on behalf of their users
+\item MEchanisms and security policies and mechanisms that control how the data is created, accessed and protected
+\end{itemize}
+\item Software maintenance process
+\begin{itemize}
+\item How to release security patches
+\end{itemize}
+\item Usability
+\begin{itemize}
+\item security for IoT-based applications must be understandable and manageable by end-users
+\end{itemize}
+\item Privacy
+\begin{itemize}
+\item "Things" belong to people and collect information about actions of them
+\item Devices and interfaces should do not leak personal information aboit the users location activities preferences // haha nice try NSA :D
+\item Need to avoid that a communication partner is able to collect large amounts of information. Current Algorithms do not prevent this type of attack
+\end{itemize}
+\end{itemize}
+
 \subsection{Sec Solutions}
 \subsection{RFID}
 \subsection{Blockerback}
