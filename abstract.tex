@@ -89,6 +89,22 @@ Things good to know:
 \item Mostly seen in C/C++ because of missing memory boundarys or access checking
 \end{itemize}
 \subsubsection{Stack Buffer Overflows}
+Programm Stack: used for managing prog execution and prog state, saves 
+\begin{itemize}
+\item Return Address
+\item Function Arguments
+\item Local Varibales
+\end{itemize}
+on the Stack Frame.
+Register EBP saves actual address of the Frame (Intel)
+Frame Pointer is the Reference Pointer within the Stack
+Stack gets modified during following actions
+\begin{itemize}
+\item Function call
+\item Function Initialization
+\item When function returns
+\end{itemize}
+//TODO merge FunctionCall example
 \subsubsection{Heap Buffer Overflows}
 Ich denke hierzu haben wir nicht wirklich was gemacht weis nicht ob das jedoch bekannt ist 
 \subsection{Integer Overflows}
