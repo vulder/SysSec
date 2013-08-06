@@ -23,6 +23,14 @@
 \item A10 Invalidated redirects and forwards
 \end{itemize}
 \subsection{SQL Injection}
+One of the most exploited vuln., despite being well known for almost a decade
+\begin{itemize}
+\item Problem: App doesn't properly separate database statements form user data
+\item Impact: Read/Write access to database (sometimes even databases form other apps which are on the same server)
+\item Tool support: sqlmap (can find injection, dump content, supports different DBMS)
+\item Solution: Never trust user-supplied data - Separate query logic form user data
+\item Good Practice: Prepared statements
+\end{itemize}
 \subsection{REST}
 
 \section{WebSec 2}
