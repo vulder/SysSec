@@ -183,7 +183,7 @@ $ //TODO $
 $ //TODO $
 
 \section{SmartGrid}
-Motivation
+\subsection{Motivation}
 \begin{itemize}
 \item 70\% of urban population will live in cities by 2050
 \item current energy supply afffected by:
@@ -198,7 +198,7 @@ Motivation
 \item scarcity of resources
 \end{itemize}
 \end{itemize}
-Properties of SmartGrid
+\subsection{Properties of SmartGrid}
 \begin{itemize}
 \item self-monitoring
 \item auto-balancing
@@ -206,25 +206,74 @@ Properties of SmartGrid
 \item efficient
 \item cost reducing
 \end{itemize}
-Requirements
+
+\subsection{Entities (Roles)}
 \begin{itemize}
-\item energy is flowing in both directions
-\item amount of energy must be carefully controlled
-\item incentives must be provided
+\item Energy Generators
+\item Energy Suppliers
 \begin{itemize}
-\item to consume / store energy
-\item only when production is high
-\item in real-time
+\item data communication network
+\item network gateway
+\item energy supply server
 \end{itemize}
+\item Prosumer \& Home Domain
+\begin{itemize}
+\item Smart Appliances
+\item Smart Meter
+\item (Wireless) Home Area Network
+\item Home Gateway
+\item Home Energy Management System
 \end{itemize}
+\item Meter Point Operator
+\end{itemize}
+
 
 \subsection{Szenario}
 $ //TODO $
 \subsection{Which Attacks are Posible}
 $ //TODO Only highlevel$
 \subsection{Abrechnung und Steuerung im Privathaus}
-$ //TODO $
+\begin{itemize}
 
+\item Raw Billing Data (RawBD)
+\begin{itemize}
+\item all related data, gathered by SmartMeter (SM)
+\end{itemize}
+
+\item Billing Data (BD)
+\begin{itemize}
+\item processed and stored by SM and local Energy Management System (EMS)
+\end{itemize}
+
+\item Aggregated Billing Data (ABD)
+\begin{itemize}
+\item Sent to the Network Gateway (NG) and forwarded to the energy supplier (ES)
+\end{itemize}
+
+\item Data for Power generation and Distributed Purpose (PDD)
+\begin{itemize}
+\item aggregated by ES from ABD of several houshold
+\item usage forecasts for certain sectors
+\end{itemize}
+
+\item Billing Data Feedback (BDF)
+\begin{itemize}
+\item every ~5 minutes users are informed about usage, generation, costs, revenues and current rates
+\end{itemize}
+
+\item Status and Control (S\&C)
+\begin{itemize}
+\item local logon to the EMS
+\item view and control Smart Appliances and Energy Management Policies
+\end{itemize}
+
+\item Remote Status and Control (RS\&C)
+\begin{itemize}
+\item see S\&C
+\item using e.g. cellular phone or remote PC from external hot spots
+\end{itemize}
+
+\end{itemize}
 \section{Internet of Things}
 \subsection{Applikationbeispiele}
 $ //TODO $
