@@ -6,23 +6,23 @@
 	\subsection{Secure Coding}
 		\begin{itemize}
 			\item Fehler und Verwundbarkeiten wärend des Betriebs auszubessern ist teuer.
-			\item Ziel: Schwachstellen während der Design- und Implementierunsphase zu erkennen und zu beheben.
+			\item Ziel: Schwachstellen waehrend der Design- und Implementierunsphase zu erkennen und zu beheben.
 		\end{itemize}
 	\subsection{STRIDE}
 	STRIDE Methode um Risk Scenarious und Worst-Cases festzulegen. Dabei werden folgende Aspekte behandelt:
 	\begin{itemize}
-		\item Spoofing Identity
+		\item Spoofing Identity \\
 		Das erlangen von Authentifizierung Informationen (Username und Password)
-		\item Tampering with data
+		\item Tampering with data \\
 		Modifizieren von Daten um Schaden zu verursachen (schwierig zu erkennen, man muss alle Daten ueberpruefen wenn es irgendwann auffaellt).
-		\item Repudiation
+		\item Repudiation \\
 		Eine zulässige Transaktion wird von einem Teilnehmer (gefaelscht) nicht anerkannt.
 		Non-Repudiation heißt im gegensatz dazu das alle Teilnehmer verfiziert werden koennen.
-		\item Information disclosure
+		\item Information disclosure \\
 		Angreifer hat Zugriff auf sensitive Informationen.
-		\item Denial of Service (DoS)
+		\item Denial of Service (DoS) \\
 		Auslastung des Systems um berechtigte User daran zu hindern dieses zu benutzen.
-		\item Escalation of privilege
+		\item Escalation of privilege \\
 		Ein Benutzer erhaelt/verschafft sich mehr Rechte als ihm zustehen.
 	\end{itemize}
 	\subsection{Security Assessment}
@@ -31,14 +31,17 @@
 		(siehe Foliensatz 1, Folie 42): \\
 		Besteht aus mehreren Schritten, wird von versch. Dingen beeinflusst (Dokumentation, Vorschriften, Risiko Szenarien/Ziele, Attack patterns, ...)
 		\begin{itemize}
-			\item Technology and Threat Modeling Workshop: Workshop zum festlegen der Risiken, Vor-Ort mit Experten. Fuehrt zu einer detailierten Beurteilung der Assets.
-			\item Security Assessment: 59 Angriffsvektoren (zb. SQL Inj., Session Management), White-, Grey-, Blackbox, Auswirkung und Wahrscheinlichkeit. Diskussion ueber Architekturen, Coding Guidlines, Prozesse ...
-			\item Reporting: Zusammenfassung fuer das Management, Gefundene Schwachstellen und Fehler, Praesentation und Uebergabe an den Kunden.
+			\item Technology and Threat Modeling Workshop: \\
+			Workshop zum festlegen der Risiken, Vor-Ort mit Experten. Fuehrt zu einer detailierten Beurteilung der Assets.
+			\item Security Assessment: \\
+			59 Angriffsvektoren (zb. SQL Inj., Session Management), White-, Grey-, Blackbox, Auswirkung und Wahrscheinlichkeit. Diskussion ueber Architekturen, Coding Guidlines, Prozesse ...
+			\item Reporting: \\
+			Zusammenfassung fuer das Management, Gefundene Schwachstellen und Fehler, Praesentation und Uebergabe an den Kunden.
 		\end{itemize}
 	\subsection{Security Assurence Level (SAL)}
 	Siemens teilt Angreifer in vier Level bezueglich ihrer Faehigkeiten ein.
 	Umso hoeher der SAL desto mehr Aufwand ist noetig um sich zu schuetzen.
-	\\
+	\\\\
 		\begin{tabular}{cccc}
 			Angreifer & Methoden & Targeting & SAL \\
 			Script Kiddy & Password Guessing, einfache Tools & non-targeted &  \\
