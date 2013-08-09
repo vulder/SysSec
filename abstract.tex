@@ -95,9 +95,41 @@ zb Social Eng ...
 \subsection{MathShit ...}
 $ //TODO fuer jedes X git es ein ... $
 \subsection{Muenzwurf}
-$ //TODO $
+Odd numbers can be given by 4n+1 (Type +1) and 4n-1 (Type -1).\\
+Fact:
+\begin{itemize}
+\item Multiplying two (odd) integers of the same type yield a product of Type +1.
+\item Factoring a product of two large primes is not tractable.
+\end{itemize}
+Example:
+\begin{itemize}
+\item (4p+1)(4q+1) = 16pq+4p+4q+1 = 4(4pq+p+q)+1
+\item (4p-1)(4q-1) = 16pq-4p-4q+1 = 4(4pq-p-q)+1
+\end{itemize}
+\begin{enumerate}
+\item Alice randomly picks one of the two types b (flips coin). She multiplies two randomly chosen large primes P,Q of type b and sends the result N=PQ to Bob.\\
+\item Bob guesses the type b' of the factors.\\
+\item Alice reveals the prime factors so Bob can verify weather he has guessed b' correctly or not.
+\end{enumerate}
+
 \subsection{Dataflow}
-$ //TODO $
+Data Flow is the usually intended flow of data between parts of the system using explicitly defined channels. DataFlows crossing Trust Boundaries (domains) must be secured.//
+Dataflow problems:
+\begin{itemize}
+\item sometimes unintended
+\item sometimes a security risk, eg:
+\begin{itemize}
+\item standard interface exposes a file that should not expose
+\item detailed error messages (file names or file locations -> directory traversal attack)
+\end{itemize} 
+\end{itemize}
+
+Inadvertent Information Flow (Leakage):\\
+\begin{itemize}
+\item unvoluntary/unexpected pass of information
+\item usually over a covert channel (timing, energy consumption, cache behaviour etc)
+\item leaked information can be deduced from other legitimitely sent informations
+\end{itemize}
 \subsection{Polices}
 $ //TODO $
 \subsection{Examples for Non-Modularity}
