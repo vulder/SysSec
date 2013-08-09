@@ -343,6 +343,25 @@ Ich denke hierzu haben wir nicht wirklich was gemacht weis nicht ob das jedoch b
 \item Code has the ability to execute every functionality which can be programmed; mostly remote shell on targeted system
 \end{itemize}
 
+\subsection{Return to libc}
+\begin{itemize}
+\item In the Return to libc the attacker modifies the Return Address to point to a function which is already in the address space(libc)
+\item This allows to inject new functionality to be executed during the normal application execution.
+\item Injecting addresses of existing functions e.g. system() exec()
+\end{itemize}
+Exploit
+\begin{enumerate}
+\item Overwrite the return addresse with an address of a existing libc function
+\item Create a Stack Frame to execute other functions
+\item Restore the original Stack Frame to execute the original application
+\end{enumerate}
+Interesting, because:
+\begin{itemize}
+\item Attacker executes function in a chain
+\item Attack is difficult to detect (application is not crashing)
+\item No code is infected
+\item Easy circumvention of memory protection mechanisms
+\end{itemize}
 
 \subsection{Integer Overflows}
 \subsection{Format String Attacks}
