@@ -2,13 +2,46 @@
 
 \begin{document}
 
-\section{Securecodeing}
-\subsection{Stide}
-$ //TODO $
-\subsection{Security Adjustation}
-$ //TODO $
-\subsection{Security Assurence Level}
-$ //TODO $
+\section{Siemens IT Sec}
+\subsection{Secure Coding}
+	\begin{itemize}
+		\item Fehler und Verwundbarkeiten wärend des Betriebs auszubessern ist teuer.
+		\item Ziel: Schwachstellen während der Design- und Implementierunsphase zu erkennen und zu beheben.
+	\end{itemize}
+\subsection{STRIDE}
+	STRIDE Methode um Risk Scenarious und Worst-Cases festzulegen. Dabei werden folgende Aspekte behandelt:
+	\large Spoofing Identity:
+	Das erlangen von Authentifizierung Informationen (Username&Password)
+	\large Tampering with data:
+	Modifizieren von Daten um Schaden zu verursachen (schwierig zu erkennen, man muss alle Daten überprüfen wenn es irgendwann auffällt).
+	\large Repudiation:
+	Eine zulässige Transaktion wird von einem Teilnehmer (gefälscht) nicht anerkannt.
+	Non-Repudiation heißt im gegensatz dazu das alle Teilnehmer verfiziert werden können.
+	\large Information disclosure:
+	Angreifer hat Zugriff auf sensitive Informationen.
+	\large Denial of Service (Dos)
+	Auslastung des Systems um berechtigte User daran zu hindern dieses zu benutzen.
+	\large Escalation of privilege
+	Ein Benutzer erhält/verschafft sich mehr Rechte als ihm zustehen.
+\subsection{Security Assessment}
+Security Assessment beinhaltet prüfen und festlegen der Sicherheitsbedürfnisse eines Assets (Geschäftskritisches Objekt).
+	\large Assessment Process (siehe Foliensatz 1, Folie 42):
+	Besteht aus mehreren Schritten, wird von versch. Dingen beeinflusst (Dokumentation, Vorschriften & Regeln, Risiko Szenarien/Ziele, Attack patterns, ...)
+	\begin{itemize}
+		\item Technology & Threat Modeling Workshop: Workshop zum festlegen der Risiken, Vor-Ort mit Experten. Führt zu einer detailierten Beurteilung der Assets.
+		\item Security Assessment: 59 Angriffsvektoren (zb. SQL Inj., Session Management), White-, Grey-, Blackbox, Auswirkung und Wahrscheinlichkeit. Diskussion über Architekturen, Coding Guidlines, Prozesse ...
+		\item Reporting: Zusammenfassung für das Management, Gefundene Schwachstellen und Fehler, Präsentation und Übergabe an den Kunden. 
+	\end{itemize}
+\subsection{Security Assurence Level (SAL)}
+Siemens teilt Angreifer in vier Level bezüglich ihrer Fähigkeiten ein. Umso höher der SAL desto mehr Aufwand ist nötig um sich zu schützen.
+\begin{tabular}{lcr}
+	Angreifer & Methoden & Targeting & SAL \\
+	Script Kiddy & Password Guessing, einfache Tools & non-targeted &  \\
+	Opportunity Rider & URL verändern, fortgeschr. Tools & surf-by & 1 \\
+	Skilled Attacker & Injection, Professionelle Tools & semi-targeted & 2 \\
+	Professional Attack & Logische und mehrstufige Angriff & targeted & 3 \\
+	 & Zugriff auf Source Code & & \\
+\end{tabular}
 
 \section{WebSec}
 \subsection{Black and Whitebox testing}
