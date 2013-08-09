@@ -54,8 +54,25 @@ $ //TODO nur eine kleine zusammenfassung des wichtigsten$
 \section{WebSec 2}
 \subsection{SQL Injection}
 $ //TODO sollte aehnlich zum punkt sql inj weiter unten sein $
+\subsection{Other Injection}
+Other interpreters to inject data e.g. OS shell, LDAP, XPath \\
+\begin{itemize}
+\item Example: OS commands often used for resizing images, copying files, start additional services
+\item Injection: userdata gets part of OS command
+\item Impact: depends on interpreter, most likely full system compromise
+\item Solution: never trust user-supplied data. user data must be validated or escaped
+\item Validation/Escaping: Whitelisting (RegEx), enclose in quotes, escape special characters
+\item Tools: Burp Suite Scanner (commercial version only)
+\end{itemize}
+
 \subsection{XSS}
-$ //TODO $
+Attacker injects JavaScript code that get executed in the browser of web site visitors.\\
+
+Problem:
+\begin{itemize}
+\item user data containing HTML markup is not properly escaped and included in the web server response
+\item the browser renders the code of the attacker as part of the web page
+\end{itemize}
 
 \section{Security Challanges}
 \subsection{Attackermodel}
