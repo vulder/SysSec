@@ -324,6 +324,25 @@ Ich denke hierzu haben wir nicht wirklich was gemacht weis nicht ob das jedoch b
 \end{itemize}
 \end{itemize} 
 
+\subsection{Code Injection}
+\begin{itemize}
+\item Attacker creats malicious argument
+\item The argument is a string which includes a pointer to the malicious code
+\item When the function return, the maliciouse code is executed
+\item The malicious code has the same permissions as the program exploited
+\end{itemize}
+\large Malicious Argument
+\begin{itemize}
+\item Program must interpret the input as legitimate input
+\item The argument must allow the attacker to execute his code
+\item The argument should not crash the attacked program
+\end{itemize}
+\large Malicious Code
+\begin{itemize}
+\item Code can be part of the argument but mostly is injected through a different vector
+\item Code has the ability to execute every functionality which can be programmed; mostly remote shell on targeted system
+\end{itemize}
+
 
 \subsection{Integer Overflows}
 \subsection{Format String Attacks}
