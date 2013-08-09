@@ -1,4 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
+\usepackage{graphicx}
+\usepackage{float}
 
 \begin{document}
 
@@ -145,22 +147,20 @@ Ein Protokoll für sicheren Datenaustausch in einem dezentralen Netzwerk, das de
 	\item Bob entschlüsselt die Nachricht mit seinem private key und antwortet Alice mit einer verschlüsselten Nachricht die das shared secret von Alice nA und ein shared secret von Bob nB enthält. Die Nachricht wird mit dem public key von Alice KeyA verschlüsselt.
 	\item Alice entschlüsselt die Nachricht mit ihrem private key und sendet Bob eine verschlüsselte Nachricht die das shared secret von Bob nB enthält. Die Nachricht wird mit dem public key von Bob KeyB verschlüsselt.
 \end{enumerate}
-\begin{figure}
+\begin{figure}[H]
+\centering
 \includegraphics{./img/ns_01}
-\caption{}
 \label{fig:ns_01}
 \end{figure}
 \large Problem bei dieser Methode ist:
 Bringt der Intruder Alice dazu eine Verbindung zu ihm aufzubauen, schickt Alice erst ihr shared secret an den Intruder. Dieser leitet die Nachricht an Bob weiter welcher mit seinem shared secret und dem von Alice antwortet. Hier kann der Intruder das shared secret von Bob noch nicht auslesen da die Nachricht mit dem public key von Alice verschlüsselt wurde, daher leitet der Intruder die Nachricht an Alice weiter. Alice antwortet DEM INTRUDER mit dem shared secret von Bob.
 \newline
 Der Intruder kennt nun das shared secret von Alice und Bob.
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics{./img/ns_02}
-\caption{}
+\includegraphics[width=\linewidth]{./img/ns_02}
 \label{fig:ns_02}
 \end{figure}
-
 \newline 
 \large Lösung:
 Bob schickt seine Identität mit. (Bin mir nimma ganz sicher sollten wir am So nochmal bereden :D)
