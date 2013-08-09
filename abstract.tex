@@ -363,9 +363,42 @@ Interesting, because:
 \item Easy circumvention of memory protection mechanisms
 \end{itemize}
 
-\subsection{Integer Overflows}
-\subsection{Format String Attacks}
-\subsection{Race Conditions}
+\subsection{Mitigation}
+\begin{itemize}
+\item NX-Bit
+\begin{itemize}
+\item \textbf{N}o e\textbf{X}ecution Bit 
+\item Hardware- and Software-based method; Operating System support necessary
+\item Strict separation between code and data
+\item Code which is written to data segments during Buffer Overflow are not executed
+\item Does not prevent the Buffer Overflow
+\item Can be circumvented by Return-to-libc
+\end{itemize}
+\item Address Space Layout Randomization
+\begin{itemize}
+\item Executed program is put into random address range(Stack, Heap, Libaries)
+\item Prevents attacks such as "return-to-libc" or "code injection"
+\item Operating System must support this: (Linux since Kernel 2.6.12, Windows Vista, Mac OS X)
+\item ASLR can be targeted using "Spraying"
+\end{itemize}
+\item Canaries
+\begin{itemize}
+\item Canaries are known valuesm which are placed between the Stack Frame and the return address
+\item During Buffer Overflow the Canary is modified before the return address 
+\item A not known value in the Canary memory segment means an external modification
+\item \textbf{Result:} Program is terminated
+\item Types of Canarys
+\begin{enumerate}
+\item Terminator Canraries
+\item Random Canraries
+\item Random XOR Canraries
+\end{enumerate}
+\item Does not prevent Heap Buffer Overflows
+\item Supported by: GCC , Microsoft Visual Studio
+\item Usage of Canaries may result in performance issues
+\end{itemize}
+\item Secure Functions
+\end{itemize}
 
 \section{NOT RELEVANT}
 \begin{tabular}{|c|c|} \hline
