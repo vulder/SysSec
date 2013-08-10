@@ -586,20 +586,86 @@ $ //TODO $
 \subsection{Was sind EALs}
 $ //TODO $
 
-\section{WebVulnerabilities}
-\subsection{State of the art}
-$ //TODO $
+\section{Web Vulnerabilities}
+\subsection{State-of-the-art security measures}
+\begin{itemize}
+	\item Application	
+	\begin{itemize}
+		\item High password quality
+		\item User input validation
+		\item Lock-out mechanisms (5 login failues, ...)
+	\end{itemize}
+	\item Firewall
+	\begin{itemize}
+		\item Encrypted tunnel - only https://
+		\item Restrictive Firewall policy - only secure traffic permitted
+	\end{itemize}
+	\item Server
+	\begin{itemize}
+		\item Server Hardening - Only really needed software is running on the server, users only have limited privileges, ...
+		\item Intrusion detection systems (ex. snort)
+		\item Lates patches installed
+		\item Anti-virus
+	\end{itemize}
+\end{itemize}
+
 \subsection{Top 10}
-$ //TODO sollte sehr aehnlich zu owasp top 10 weiter oben sein$
-\subsection{SQL Injection Counter MEasures}
-SYNTAX
-Some Stuff in section websec 
-$ //TODO add syntax $
-$ //TODO add example Counter Measures $
+Siehe OWASP oben 2.2, hier eine weiter nicht offizielle OWASP Top10 (weder 2010, noch 2013). Empfehle dieses OWASP zu ignorieren.
+\begin{itemize}
+\item XSS
+\item Injection Flaws
+\item Malicious File Execution
+\item Insecure direct object reference
+\item CSRF
+\item Information Leakage and Improper Error Handling
+\item Broken authentication and session management
+\item Insecure Cryptographic Storage
+\item Insecure Communications
+\item Failure to restrict URL access
+\end{itemize}
+\subsection{SQL Injection}
+Typical Code: \\
+string sql = "select * from Users where user ='" +
+User.Form + "' and pwd='" + Password.Form + "'"\\\\
+Attacker: \\
+sql="select * from Users where user ='mch160' and pwd
+='' or 1=1 -- '"\\\\
+
+Some commands:
+\begin{itemize}
+\item 'or 1=1 --'   = login without password
+\item '; drop database myDB; --   = delete database
+\item '; xp_cmdshell 'format c: /q /yes   = format harddrive (MSSQL Server)
+\end{itemize}
+Database system usually runs with system privileges ...
+
+\subsubsection{Counter Measures}
+\begin{itemize}
+\item Limit user access
+\item Limit user input length and data types
+\item Verify data types
+\item Quoting the input and filter out characters (\textbackslash, \textslash, ;, --, ...)
+\item Proper error handling
+\item Prepared statement or parameterized statement \\
+\begin{itemize}
+\item // 1. define statement (query logic):
+PreparedStatement ps = Connection.prepareStatement(
+"SELECT user, password FROM tbl_user WHERE (user=?)"
+);
+\item //2. bind query parameters to user input
+ps.setString(1, username);
+\item //3. execute query
+ResultSet rs = ps.executeQuery();
+\end{itemize}
+\item Stored Procedures \\
+Procedures are stored in the Database and called with the give input parameters.
+Disable stored procedures master (XP_cmdshell, XP_startmail,...)
+\end{itemize}
+
 \subsection{XSS - Cross-site scripting}
 \begin{itemize}
 \item User injects JavaScript code that subsequentially gets executed in the browser of the visitor
-\item Problem: User data that contains HTML markup is not properly escaped, the browser renders the attacker code as port of the web page
+\item Problem: User data that contains HTML markup is not properly escaped, the browser renders the attacker code as part of the web page
 \end{itemize}
 
 \subsection{CSRF}
