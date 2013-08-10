@@ -534,7 +534,6 @@ $ //TODO combine the following points better // nicht gar so wichtig sind aber p
 \item Profiling: Identifying the items an idividual has in their possession
 \end{itemize}
 A sufficiently powerful directerd reader reads tags in a house or car, enabling large scale tracking and profiling of individuals \\ \newline
-\newbox
 \large Design Principles for Privacy
 \begin{itemize}
 \item Proportionality
@@ -581,8 +580,67 @@ Typical scenario would be specially crafted packets causeing buffer overflows to
 \section{Product certification and
 formal security analysis
 at industrial examples}
-\subsection{Common criteria}
-$ //TODO $
+\subsection{Common Criteria}
+	\subsubsection{Common Criteria process overview}
+	Certification according to the Common Criteria is a rather complex, time
+	consuming and expensive process, providing systematic assurance.
+	A successful, approved evaluation is awarded a certificate.
+	Lifetime of certificates is theoretically not bounded, but their
+	applicability is limited by technical progress (re-certification).
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{./img/cc_01}
+		\label{fig:cc_01}
+		\end{figure}
+	\subsection{Security requirements documents}
+		Security Target (ST):
+		defines extent and depth of the evaluation
+		for a specific product called Target of Evaluation (TOE) \\
+		Protection Profile (PP):
+		defines extent and depth of the evaluation
+		for a whole class of products, i.e. firewalls
+	\subsubsection{Security Functional Requirements (SFRs) overview}
+		\begin{itemize}
+			\item	FAU: Security audit
+			\begin{itemize}
+				\item Security audit automatic response (FAU\_ARP)
+				\item Security audit data generation (FAU\_GEN)
+				\item Security audit analysis (FAU\_SAA)
+				\item Security audit review (FAU\_SAR)
+				\item Security audit event selection (FAU\_SEL)
+				\item Security audit event storage (FAU\_STG)
+			\end{itemize}
+			\item	FCO: Communication
+			\item	FCS: Cryptographic support
+			\item	FDP: User data protection
+			\item	FIA : Identification and authentication
+			\item	FMT: Security management
+			\item	FPR: Privacy
+			\item	FPT: Protection of the TSF
+			\item	FRU: Resource utilization
+			\item	FTA: TOE access
+			\item	FTP: Trusted path/channels
+		\end{itemize}
+	\subsubsection{Evaluation Assurance Levels}
+		\begin{tabular}{|c|c|} \hline
+		\textbf{} & \textbf{ELA designation} \\ \hline
+			EAL1 & functionally tested \\ \hline
+			EAL2 & structurally tested \\ \hline
+			EAL3 & methodically tested and checked \\ \hline
+			EAL4 & methodically designed, tested and reviewed \\ \hline
+			EAL5 & semiformally designed and tested \\ \hline
+			EAL6 & semiformally verified design and tested \\ \hline
+			EAL7 & formally verified design and tested \\ \hline
+		\end{tabular} \\ \\
+		EAL does not say how secure a product is, but how well its requirements are checked.
+		Assurance is grounds for confidence that an IT product meets its security objectives.
+		\subsection{Factors determining the evaluation effort}
+			\begin{itemize}
+				\item Boundary of TOE vs. TOE environment
+				\item Definition of Threats and Security Objectives for the TOE
+				\item Definition of Security Functional Requirements (SFRs)
+				\item Selection of Evaluation Assurance Level (EAL)
+			\end{itemize}
 \subsection{Was ist ein Sec Target}
 $ //TODO $
 \subsection{Was ist ein Connection Profile}
