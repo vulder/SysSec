@@ -562,7 +562,7 @@ fuer RFID
 $ //TODO $
 
 
-\section{6 Threads Landscape}
+\section{6 Threat Landscape}
 \subsection{Phishing}
 Fraudulent e-mails and legitimate looking websites by cybercriminals in order to deceitfully gain user credentials.
 \subsection{Spearphising}
@@ -685,12 +685,72 @@ Disable stored procedures master (XP\_cmdshell, XP\_startmail,...)
 \end{itemize}
 
 \section{Formal Security Models}
+A security policy defines what is allowed (actions, data flow...) typically by a relationship between subjects and objects.\\
+A security model is a formal description of a policy and enforcing mechanisms, usually in terms of system states or state sequences (traces).\\
+
+\begin{itemize}
+\item Formal Level: should be adequate
+\begin{itemize}
+\item the more formal, the more precise
+\item but requires deeper mastering of formal methods
+\end{itemize}
+\item Choice of Formalism: dependent on ...
+\begin{itemize}
+\item application domain, modeler's experience, tool availability
+\item formalism should be simple, expressive, flexible, mature
+\end{itemize}
+\item Abstraction Level: should be
+\begin{itemize}
+\item high enough to achieve clarity and limit the effort
+\item low enough not to loose important detail
+\item refinement allows for both high-level and detailed description
+\end{itemize}
+\end{itemize}
+
+
 \subsection{Welche art von Modellen gibt es}
-$ //TODO $
+\subsubsection{Automata model}
+Automata with nondeterministic state transitions and buffered I/O, simultaneously on multiple connections.
+\begin{itemize}
+\item transitions definable in executable and/or axiomatic style
+\item applicable to a large variety of reactive systems
+\end{itemize}
+
+\subsubsection{Access Control models}
+???
+
+\subsubsection{Imnformation Flow model}
+\begin{itemize}
+\item identify knowledge/information domains
+\item specify allowed flow between domains
+\item check the observation that can be made about state and/or actions
+\item consider also indirect and partial flow
+\item classic model: Noninterference
+\item many variants: non-deducability, restrictiveness, non-leakage...
+\item Very strong but rarely used in practice
+\end{itemize}
+
+\subsubsection{Cryptoprotocol model}
+\begin{itemize}
+\item descive message exchange between processes or pricipals
+\item take cryptographic operations ass perfect primitives
+\item describe system with specialized modeling languages
+\item state secrecy, authentication, .... goals
+\item verify automatically using model-checkers
+\end{itemize}
+
 \subsection{Ansatz und Vorteile von Formal Security}
 $ //TODO $
 \subsection{Conclusions}
-$ //TODO $
+\begin{itemize}
+\item overview: system architecture (components and interfaces) eg databases, authentication services, connections, ...
+\item security-related concepts: actors, assets, states, messages,...
+\item Threats: which attacks have to be expected
+\item assumptions: what does the environment fulfill
+\item security obejctives: what the system should achieve. Describe in detail such that concrete verification goals can be set up. eg integrity
+\item security mechanisms: relation to objectives and how they are achieved eg who signs where which content
+\item Describe precisly but at high level (no implementation details required)
+\end{itemize}
 
 \section{BufferOverflow}
 \subsection{Buffer Overflows}
