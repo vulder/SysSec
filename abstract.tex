@@ -640,7 +640,7 @@ Some commands:
 \begin{itemize}
 \item 'or 1=1 --'   = login without password
 \item '; drop database myDB; --   = delete database
-\item '; xp_cmdshell 'format c: /q /yes   = format harddrive (MSSQL Server)
+\item '; xp\_cmdshell 'format c: /q /yes   = format harddrive (MSSQL Server)
 \end{itemize}
 Database system usually runs with system privileges ...
 
@@ -649,22 +649,22 @@ Database system usually runs with system privileges ...
 \item Limit user access
 \item Limit user input length and data types
 \item Verify data types
-\item Quoting the input and filter out characters (\textbackslash, \textslash, ;, --, ...)
+\item Quoting the input and filter out characters (\textbackslash, /, ;, --, ...)
 \item Proper error handling
 \item Prepared statement or parameterized statement \\
 \begin{itemize}
-\item // 1. define statement (query logic):
+\item // 1. define statement (query logic): \\
 PreparedStatement ps = Connection.prepareStatement(
-"SELECT user, password FROM tbl_user WHERE (user=?)"
+"SELECT user, password FROM tbl\_user WHERE (user=?)"
 );
-\item //2. bind query parameters to user input
+\item //2. bind query parameters to user input \\
 ps.setString(1, username);
-\item //3. execute query
+\item //3. execute query \\
 ResultSet rs = ps.executeQuery();
 \end{itemize}
 \item Stored Procedures \\
 Procedures are stored in the Database and called with the give input parameters.
-Disable stored procedures master (XP_cmdshell, XP_startmail,...)
+Disable stored procedures master (XP\_cmdshell, XP\_startmail,...)
 \end{itemize}
 
 \subsection{XSS - Cross-site scripting}
