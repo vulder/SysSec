@@ -502,17 +502,20 @@ $ //TODO $
 Fraudulent e-mails and legitimate looking websites by cybercriminals in order to deceitfully gain user credentials.
 \subsection{Spearphising}
 Phishing attempts directed at specific individuals or companies have been termed spearphishing. Attackers may gather personal information about their target to increase their probability of success. [Wikipedia]
-\subsection{Zertificate}
-$ //TODO $
+\subsection{Rouge certificates}
+Rogue certificates allow attackers to create illegitimate sites that are indistinguishable from real sites like eBay, Google or PNC because their certificate hierarchy can be validated.  Users then will be redirected to such sites through phishing or ‘”man in the middle” attacks where a compromised host in-between the user and a legitimate site sends traffic to an illegitimate site instead.
+[Soße: http://www.jurinnov.com/the-threat-of-rogue-certificate-authorities]
+Stuxnet, Duqu and Flamer used rouge certificates.
 \subsection{Chain of Trust}
-$ //TODO $
-
+The Certificate Hierarchy is a structure of certificates that allows individuals to verify the validity of a certificate's issuer. Certificates are issued and signed by certificates that reside higher in the certificate hierarchy, so the validity and trustworthiness of a given certificate is determined by the corresponding validity of the certificate that signed it.
+[Wikipedia]
 \section{Cause Analysis}
-\subsection{Implementation Errors}
-$ //TODO $
-die ueber legitime Ports ausgenutzt werden koennen.
+\subsection{Implementation errors exploited via legitimate port}
+Typical scenario would be specially crafted packets causeing buffer overflows to place codes or commands. (e.g. remote code executun, privilege escalation , data stealing, full control)
 
-\section{Product ...}
+\section{Product certification and
+formal security analysis
+at industrial examples}
 \subsection{Common criteria}
 $ //TODO $
 \subsection{Was ist ein Sec Target}
